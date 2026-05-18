@@ -1,0 +1,56 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+dist/
+build/
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+
+# Data
+data/uploads/
+data/models/*.pth
+data/*.pth
+data/raw/
+data/processed/
+logs/
+mlruns/
+result/
+reports/generated_assets/
+
+# Node
+frontend/node_modules/
+frontend/dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Jupyter
+notebooks/.ipynb_checkpoints/
+
+# Local media, reports, and scratch files
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.webm
+*.pth
+*.pt
+*.onnx
+output.png
+MinorProjectReportCodeMonksAprilMay2026.pdf
+c.py
+m.txt
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp

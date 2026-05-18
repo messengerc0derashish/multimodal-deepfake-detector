@@ -1,0 +1,15 @@
+fastapi
+uvicorn
+gunicorn
+numpy
+pandas
+pillow
+opencv-python-headless
+torch
+torchvision
+torchaudio
+scikit-learn
+moviepy
+ffmpeg-python
+python-multipart
+aiofiles

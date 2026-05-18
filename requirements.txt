@@ -1,0 +1,105 @@
+# ═══════════════════════════════════════════════════════════════════════════════
+# INSTALL ORDER — run these steps manually BEFORE pip install -r requirements.txt
+#
+# Step 1: pip install torch==2.3.0 torchvision==0.18.0 torchaudio==2.3.0 --index-url https://download.pytorch.org/whl/cu121
+# Step 2: pip install pillow==10.2.0
+# Step 3: pip install facenet-pytorch==2.6.0 --no-deps
+# Step 4: pip install -r requirements.txt --extra-index-url https://download.pytorch.org/whl/cu121
+# ═══════════════════════════════════════════════════════════════════════════════
+
+# ── Core ML Framework (CUDA 12.1) — installed in Step 1, listed here for reference
+torch==2.3.0
+torchvision==0.18.0
+torchaudio==2.3.0
+
+# ── Deep Learning Utilities ───────────────────────────────────────────────────
+timm==1.0.3
+# facenet-pytorch installed separately in Step 3 with --no-deps
+grad-cam==1.5.2
+ttach==0.0.3
+
+# ── HuggingFace Stack ─────────────────────────────────────────────────────────
+transformers==4.41.0
+tokenizers==0.19.1
+huggingface-hub==0.23.0
+safetensors==0.4.3
+
+# ── Computer Vision ───────────────────────────────────────────────────────────
+opencv-python==4.11.0.86
+albumentations==1.4.4
+scikit-image==0.24.0
+pillow==10.2.0
+imageio==2.34.0
+
+# ── Video / Audio Processing ──────────────────────────────────────────────────
+av==12.3.0
+librosa==0.10.2
+soundfile==0.12.1
+audioread==3.1.0
+soxr==0.3.7
+
+# ── Speech Recognition ────────────────────────────────────────────────────────
+
+
+# ── Inference Runtime ─────────────────────────────────────────────────────────
+onnxruntime-gpu==1.18.0
+
+# ── Numerical / Scientific ────────────────────────────────────────────────────
+numpy==1.26.4
+scipy==1.13.0
+pandas==2.2.2
+scikit-learn==1.5.0
+numba==0.60.0
+llvmlite==0.43.0
+
+# ── Experiment Tracking ───────────────────────────────────────────────────────
+mlflow==2.13.1
+tensorboard==2.17.0
+optuna==3.6.1
+loguru==0.7.2
+
+# ── API / Web Server ───────────────────────────────────────────────────────────
+fastapi==0.111.0
+uvicorn==0.29.0
+gunicorn==22.0.0
+starlette==0.37.2
+python-multipart==0.0.9
+httpx==0.27.0
+
+# ── Task Queue ────────────────────────────────────────────────────────────────
+celery==5.4.0
+redis==5.0.4
+kombu==5.3.4
+amqp==5.2.0
+billiard==4.2.1
+
+# ── Visualization ─────────────────────────────────────────────────────────────
+matplotlib==3.9.0
+seaborn==0.13.2
+
+# ── Utilities ─────────────────────────────────────────────────────────────────
+tqdm==4.66.4
+pyyaml==6.0.1
+python-dotenv==1.0.1
+requests==2.32.3
+packaging==24.1
+filelock==3.15.4
+sympy==1.13.1
+networkx==3.3
+regex==2024.5.15
+colorlog==6.8.2
+
+# ── Pydantic / Settings ───────────────────────────────────────────────────────
+pydantic==2.7.1
+pydantic-settings==2.3.0
+
+# ── Jupyter / Dev ─────────────────────────────────────────────────────────────
+ipykernel==6.29.5
+ipython==8.25.0
+
+# ── Windows Specific ──────────────────────────────────────────────────────────
+pywin32==306; sys_platform == "win32"
+colorama==0.4.6; sys_platform == "win32"
+
+
+
