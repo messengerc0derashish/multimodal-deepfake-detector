@@ -509,7 +509,7 @@ export default function App() {
       <footer className="app-footer">
         <nav aria-label="Project links">
           <a href="https://github.com/c0derashish/multimodal-deepfake-detector" target="_blank" rel="noreferrer">GitHub</a>
-          <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href="https://www.linkedin.com/in/ashish-chandra-552528296/" target="_blank" rel="noreferrer">LinkedIn</a>
         </nav>
         <span>Made with ❤️ by Code Monks</span>
       </footer>
