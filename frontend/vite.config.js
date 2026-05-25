@@ -6,7 +6,7 @@ export default defineConfig(({ mode }) => {
   const apiTarget =
     env.VITE_API_PROXY_TARGET ||
     env.VITE_API_URL ||
-    'http://127.0.0.1:8000'
+    'https://codemonks-multimodaldeepfakedetector.hf.space'
 
   return {
     plugins: [react()],
