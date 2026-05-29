@@ -12,8 +12,6 @@ venv/
 
 # Data
 data/uploads/
-data/models/*.pth
-data/*.pth
 data/raw/
 data/processed/
 logs/
@@ -38,8 +36,6 @@ notebooks/.ipynb_checkpoints/
 *.mov
 *.mkv
 *.webm
-*.pth
-*.pt
 *.onnx
 output.png
 MinorProjectReportCodeMonksAprilMay2026.pdf
