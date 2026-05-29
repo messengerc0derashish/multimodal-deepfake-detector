@@ -28,7 +28,6 @@ RUN mkdir -p data/uploads data/models logs
 
 EXPOSE 10000
 
-HEALTHCHECK --interval=30s --timeout=10s --start-period=60s --retries=3 
-CMD curl -f [http://localhost:${PORT:-10000}/api/health](http://localhost:${PORT:-10000}/api/health) || exit 1
+HEALTHCHECK --interval=30s --timeout=10s --start-period=60s --retries=3 CMD curl -f [http://localhost:${PORT:-10000}/api/health](http://localhost:${PORT:-10000}/api/health) || exit 1
 
 CMD gunicorn backend.api.main:app --worker-class uvicorn.workers.UvicornWorker --workers 1 --bind 0.0.0.0:${PORT:-10000} --timeout 300 --keep-alive 5 --log-level info
