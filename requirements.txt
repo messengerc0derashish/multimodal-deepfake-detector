@@ -11,10 +11,12 @@
 torch==2.3.0
 torchvision==0.18.0
 torchaudio==2.3.0
+pillow==10.2.0
+facenet-pytorch
 
 # ── Deep Learning Utilities ───────────────────────────────────────────────────
 timm==1.0.3
-# facenet-pytorch installed separately in Step 3 with --no-deps
+#facenet-pytorch installed separately in Step 3 with --no-deps
 grad-cam==1.5.2
 ttach==0.0.3
 
@@ -37,9 +39,6 @@ librosa==0.10.2
 soundfile==0.12.1
 audioread==3.1.0
 soxr==0.3.7
-
-# ── Speech Recognition ────────────────────────────────────────────────────────
-
 
 # ── Inference Runtime ─────────────────────────────────────────────────────────
 onnxruntime-gpu==1.18.0
@@ -100,6 +99,3 @@ ipython==8.25.0
 # ── Windows Specific ──────────────────────────────────────────────────────────
 pywin32==306; sys_platform == "win32"
 colorama==0.4.6; sys_platform == "win32"
-
-
-
