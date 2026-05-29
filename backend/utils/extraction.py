@@ -175,18 +175,6 @@ def compute_mel_spectrogram(
 
 # ─── Transcript Extraction ────────────────────────────────────────────────────
 
-_whisper_model = None   # lazy-loaded singleton
-
-
-def get_whisper_model(model_size: str = "base") -> WhisperModel:
-    """Load faster-whisper model once and cache."""
-    global _whisper_model
-    if _whisper_model is None:
-        logger.info(f"Loading faster-whisper '{model_size}' model...")
-        # compute_type="int8" works on CPU with no special hardware
-        _whisper_model = WhisperModel(model_size, device="cpu", compute_type="int8")
-    return _whisper_model
-
 
 def extract_transcript(
     video_path: str | Path,
@@ -196,25 +184,32 @@ def extract_transcript(
     Transcribe video audio using faster-whisper.
     Returns dict with 'text', 'segments', and 'language' keys.
     """
-    model = get_whisper_model(model_size)
-
-    # faster-whisper returns a generator — consume it fully
-    segments_gen, info = model.transcribe(str(video_path), beam_size=5)
-
-    segments = []
-    full_text = ""
-    for seg in segments_gen:
-        segments.append({
-            "start": round(seg.start, 2),
-            "end":   round(seg.end, 2),
-            "text":  seg.text.strip(),
-        })
-        full_text += seg.text + " "
-
-    full_text = full_text.strip()
-    logger.info(f"Transcript ({info.language}): {full_text[:120]}...")
-    return {
-        "text":     full_text,
-        "segments": segments,
-        "language": info.language,
-    }
+  try:
+        model = get_whisper_model(model_size)
+    
+        # faster-whisper returns a generator — consume it fully
+        segments_gen, info = model.transcribe(str(video_path), beam_size=5)
+    
+        segments = []
+        full_text = ""
+        for seg in segments_gen:
+            segments.append({
+                "start": round(seg.start, 2),
+                "end":   round(seg.end, 2),
+                "text":  seg.text.strip(),
+            })
+            full_text += seg.text + " "
+    
+        full_text = full_text.strip()
+        logger.info(f"Transcript ({info.language}): {full_text[:120]}...")
+        return {
+            "text":     full_text,
+            "segments": segments,
+            "language": info.language,
+        }
+  except Exception as e:
+        return {
+            "text": '',
+            "segments": '',
+            "language": '',
+        }
