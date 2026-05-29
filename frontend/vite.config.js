@@ -6,7 +6,7 @@ export default defineConfig(({ mode }) => {
   const apiTarget =
     env.VITE_API_PROXY_TARGET ||
     env.VITE_API_URL ||
-    'https://codemonks-multimodaldeepfakedetector.hf.space'
+    'https://multimodal-deepfake-detector-mlen.onrender.com'
 
   return {
     plugins: [react()],
