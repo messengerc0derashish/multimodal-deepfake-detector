@@ -13,3 +13,4 @@ moviepy
 ffmpeg-python
 python-multipart
 aiofiles
+loguru
